@@ -1,6 +1,6 @@
-import React from 'react';
-import { Card, Button, Dropdown, Typography } from 'antd';
 import { EllipsisOutlined } from '@ant-design/icons';
+import { Card, Button, Dropdown, Typography } from 'antd';
+import React from 'react';
 import {
   PieChart,
   Pie,

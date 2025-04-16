@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { Menu, Tabs, Avatar, Badge, Input, Divider } from 'antd';
 import {
   AppstoreOutlined,
   HomeOutlined,
@@ -19,8 +17,10 @@ import {
   PlusOutlined,
   InfoCircleOutlined,
 } from '@ant-design/icons';
-import { Link, useLocation } from 'react-router-dom';
+import { Menu, Tabs, Avatar, Badge, Input, Divider } from 'antd';
 import type { MenuProps } from 'antd';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const { TabPane } = Tabs;
 

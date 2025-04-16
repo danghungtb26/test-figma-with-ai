@@ -1,6 +1,6 @@
-import React from 'react';
-import { Table, Button, Space, Input } from 'antd';
 import { SearchOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import { Table, Button, Space, Input } from 'antd';
+import React from 'react';
 
 const Users: React.FC = () => {
   const dataSource = [

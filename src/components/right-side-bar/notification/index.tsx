@@ -1,18 +1,12 @@
-import React from 'react';
+import { BugOutlined, UserOutlined, BellOutlined, FileTextOutlined } from '@ant-design/icons';
 import { Typography, Badge } from 'antd';
-import {
-  BugOutlined,
-  UserOutlined,
-  NotificationOutlined,
-  BellOutlined,
-  FileTextOutlined,
-} from '@ant-design/icons';
+import React from 'react';
 
 const { Title, Text } = Typography;
 
 interface NotificationItem {
   id: string;
-  icon: React.ReactNode;
+  icon: React.ReactElement<{ style: React.CSSProperties }>;
   iconBgColor: string;
   title: string;
   time: string;
@@ -67,7 +61,7 @@ const Notification: React.FC = () => {
           <div
             className={`${notification.iconBgColor} h-8 w-8 rounded-md flex items-center justify-center mr-3`}
           >
-            {React.cloneElement(notification.icon as React.ReactElement, {
+            {React.cloneElement(notification.icon, {
               style: { color: 'black' },
             })}
           </div>

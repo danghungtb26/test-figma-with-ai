@@ -1,5 +1,3 @@
-import React from 'react';
-import { Input, Dropdown, Menu, Tooltip } from 'antd';
 import {
   SearchOutlined,
   MenuOutlined,
@@ -9,6 +7,8 @@ import {
   ClockCircleOutlined,
   MenuUnfoldOutlined,
 } from '@ant-design/icons';
+import { Input, Tooltip } from 'antd';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 interface NavbarProps {
@@ -16,15 +16,6 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ onToggleRightSidebar }) => {
-  const menu = (
-    <Menu>
-      <Menu.Item key="profile">Profile</Menu.Item>
-      <Menu.Item key="settings">Settings</Menu.Item>
-      <Menu.Divider />
-      <Menu.Item key="logout">Logout</Menu.Item>
-    </Menu>
-  );
-
   return (
     <div className="flex justify-between items-center px-7 py-5 border-b border-gray-100">
       {/* Left side */}

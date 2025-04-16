@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Card, Button, Dropdown, Menu, Tabs, Typography } from 'antd';
 import { EllipsisOutlined } from '@ant-design/icons';
+import { Card, Button, Dropdown, Tabs, Typography } from 'antd';
+import React, { useState } from 'react';
 import {
   LineChart,
   Line,
@@ -27,16 +27,6 @@ interface LineChartProps {
 
 const UsersLineChart: React.FC<LineChartProps> = ({ data }) => {
   const [activeTab, setActiveTab] = useState('total-users');
-
-  // Menu dropdown for card "more" button
-  const moreMenu = (
-    <Menu>
-      <Menu.Item key="1">View Details</Menu.Item>
-      <Menu.Item key="2">Export Data</Menu.Item>
-      <Menu.Item key="3">Settings</Menu.Item>
-    </Menu>
-  );
-
   // Custom tooltip component for better styling
   const CustomTooltip: React.FC<TooltipProps<number, string>> = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
@@ -57,7 +47,7 @@ const UsersLineChart: React.FC<LineChartProps> = ({ data }) => {
   };
 
   return (
-    <Card className="rounded-xl shadow-sm border-0" bodyStyle={{ padding: '24px' }}>
+    <Card className="rounded-xl shadow-sm border-0" styles={{ body: { padding: '24px' } }}>
       <div className="flex justify-between items-center mb-6">
         <div>
           <Tabs activeKey={activeTab} onChange={setActiveTab} className="users-chart-tabs">
@@ -75,7 +65,16 @@ const UsersLineChart: React.FC<LineChartProps> = ({ data }) => {
             <div className="w-2 h-2 rounded-full bg-[#AEC7ED] mr-1"></div>
             <Text className="text-xs">Last year</Text>
           </div>
-          <Dropdown overlay={moreMenu} placement="bottomRight">
+          <Dropdown
+            menu={{
+              items: [
+                { key: '1', label: <span className="text-sm">View Details</span> },
+                { key: '2', label: <span className="text-sm">Export Data</span> },
+                { key: '3', label: <span className="text-sm">Settings</span> },
+              ],
+            }}
+            placement="bottomRight"
+          >
             <Button type="text" icon={<EllipsisOutlined />} />
           </Dropdown>
         </div>

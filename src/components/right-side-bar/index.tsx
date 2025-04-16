@@ -1,8 +1,9 @@
-import React from 'react';
 import { Divider } from 'antd';
-import Notification from './notification';
+import React from 'react';
+
 import Activity from './activity';
 import Contact from './contact';
+import Notification from './notification';
 
 const RightSidebar: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Card, Button, Dropdown, Menu } from 'antd';
 import { EllipsisOutlined } from '@ant-design/icons';
+import { Card, Button, Dropdown, Menu } from 'antd';
+import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 interface WeeklySalesChartProps {

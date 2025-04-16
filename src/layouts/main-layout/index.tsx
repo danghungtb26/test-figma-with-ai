@@ -1,8 +1,8 @@
+import Navbar from '@components/navbar';
+import RightSidebar from '@components/right-side-bar';
+import Sidebar from '@components/sidebar';
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import Navbar from '../../components/navbar';
-import Sidebar from '../../components/sidebar';
-import RightSidebar from '../../components/right-side-bar';
 
 const MainLayout: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);

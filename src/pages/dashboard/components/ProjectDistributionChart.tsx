@@ -1,6 +1,6 @@
-import React from 'react';
-import { Card, Button, Dropdown, Typography } from 'antd';
 import { EllipsisOutlined } from '@ant-design/icons';
+import { Card, Button, Dropdown, Typography } from 'antd';
+import React from 'react';
 import {
   PieChart,
   Pie,
@@ -11,6 +11,8 @@ import {
   TooltipProps,
   PieLabel,
 } from 'recharts';
+// Custom legend component
+import { LegendProps } from 'recharts';
 
 const { Text, Title } = Typography;
 
@@ -74,17 +76,16 @@ const CustomTooltip: React.FC<TooltipProps<number, string>> = ({ active, payload
   return null;
 };
 
-// Custom legend component
-const CustomLegend = ({ payload }: any) => {
+const CustomLegend = ({ payload }: LegendProps) => {
   return (
     <div className="flex flex-col space-y-3 mt-4">
-      {payload.map((entry: any, index: number) => (
+      {payload?.map((entry, index: number) => (
         <div key={`legend-${index}`} className="flex items-center justify-between">
           <div className="flex items-center">
             <div className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: entry.color }} />
             <Text className="text-sm">{entry.value}</Text>
           </div>
-          <Text strong>{entry.payload.value} projects</Text>
+          <Text strong>{entry.payload?.value} projects</Text>
         </div>
       ))}
     </div>

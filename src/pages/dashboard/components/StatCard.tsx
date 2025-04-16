@@ -1,6 +1,6 @@
-import React from 'react';
-import { Card, Typography } from 'antd';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
+import { Card, Typography } from 'antd';
+import React from 'react';
 
 const { Title, Text } = Typography;
 

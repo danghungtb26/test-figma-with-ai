@@ -1,5 +1,3 @@
-import React from 'react';
-import { Card, Button, Dropdown, Menu, Table, Typography, Avatar, Progress } from 'antd';
 import {
   EllipsisOutlined,
   MoreOutlined,
@@ -7,6 +5,8 @@ import {
   ClockCircleFilled,
   CloseCircleFilled,
 } from '@ant-design/icons';
+import { Card, Button, Dropdown, Table, Typography, Avatar, Progress } from 'antd';
+import React from 'react';
 
 const { Text } = Typography;
 
@@ -26,13 +26,13 @@ interface ProjectTableProps {
 
 const ProjectTable: React.FC<ProjectTableProps> = ({ data }) => {
   // Menu dropdown for card "more" button
-  const moreMenu = (
-    <Menu>
-      <Menu.Item key="1">View Details</Menu.Item>
-      <Menu.Item key="2">Export Data</Menu.Item>
-      <Menu.Item key="3">Settings</Menu.Item>
-    </Menu>
-  );
+  const moreMenu = {
+    items: [
+      { key: '1', label: 'View Details' },
+      { key: '2', label: 'Export Data' },
+      { key: '3', label: 'Settings' },
+    ],
+  };
 
   const columns = [
     {
@@ -96,7 +96,7 @@ const ProjectTable: React.FC<ProjectTableProps> = ({ data }) => {
       title="Project Status"
       className="rounded-xl shadow-sm border-0"
       extra={
-        <Dropdown overlay={moreMenu} placement="bottomRight">
+        <Dropdown menu={moreMenu} placement="bottomRight">
           <Button type="text" icon={<EllipsisOutlined />} />
         </Dropdown>
       }
