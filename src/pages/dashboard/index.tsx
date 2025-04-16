@@ -2,11 +2,11 @@ import { DownloadOutlined } from '@ant-design/icons';
 import { Row, Col, Typography, Button } from 'antd';
 import React from 'react';
 
-import ProjectDistributionChart from './components/ProjectDistributionChart';
-import RevenuePieChart, { RevenueData } from './components/RevenuePieChart';
-import StatCard from './components/StatCard';
-import UsersLineChart from './components/UsersLineChart';
-import WeeklySalesChart from './components/WeeklySalesChart';
+import ProjectDistributionChart from './components/project-distribution-chart';
+import RevenuePieChart, { RevenueData } from './components/revenue-pie-chart';
+import StatCard from './components/stat-card';
+import UsersLineChart from './components/users-line-chart';
+import WeeklySalesChart from './components/weekly-sales-chart';
 
 const { Title, Text } = Typography;
 

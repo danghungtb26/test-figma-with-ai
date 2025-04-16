@@ -9,7 +9,11 @@ const MainLayout: React.FC = () => {
   const [rightCollapsed, setRightCollapsed] = useState<boolean>(false);
 
   const toggleSidebar = () => {
-    setCollapsed(!collapsed);
+    setCollapsed((s) => !s);
+  };
+
+  const toggleRightSidebar = () => {
+    setRightCollapsed((s) => !s);
   };
 
   const rightSidebarWidth = rightCollapsed ? 'w-0' : 'w-[280px]';
@@ -33,12 +37,11 @@ const MainLayout: React.FC = () => {
       <div className="flex-auto ">
         {/* Header */}
         <div className="sticky top-0 z-20 bg-white shadow-sm transition-all duration-300 ease-in-out">
-          <Navbar onToggleRightSidebar={() => setRightCollapsed((s) => !s)} />
+          <Navbar onToggleLeftSidebar={toggleSidebar} onToggleRightSidebar={toggleRightSidebar} />
         </div>
 
         {/* Content */}
         <Outlet />
-        {/* <div className="bg-[red] h-screen">aaa</div> */}
       </div>
 
       {/* Right Sidebar Container */}

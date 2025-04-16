@@ -51,7 +51,7 @@ const Users: React.FC = () => {
     {
       title: 'Action',
       key: 'action',
-      render: (_: any, record: any) => (
+      render: () => (
         <Space size="middle">
           <Button type="primary" icon={<EditOutlined />} size="small">
             Edit

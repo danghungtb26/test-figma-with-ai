@@ -1,5 +1,5 @@
-import { EllipsisOutlined } from '@ant-design/icons';
-import { Card, Button, Dropdown, Tabs, Typography } from 'antd';
+import MoreMenuDropdown from '@components/more-menu-dropdown';
+import { Card, Tabs, Typography } from 'antd';
 import React, { useState } from 'react';
 import {
   LineChart,
@@ -65,18 +65,7 @@ const UsersLineChart: React.FC<LineChartProps> = ({ data }) => {
             <div className="w-2 h-2 rounded-full bg-[#AEC7ED] mr-1"></div>
             <Text className="text-xs">Last year</Text>
           </div>
-          <Dropdown
-            menu={{
-              items: [
-                { key: '1', label: <span className="text-sm">View Details</span> },
-                { key: '2', label: <span className="text-sm">Export Data</span> },
-                { key: '3', label: <span className="text-sm">Settings</span> },
-              ],
-            }}
-            placement="bottomRight"
-          >
-            <Button type="text" icon={<EllipsisOutlined />} />
-          </Dropdown>
+          <MoreMenuDropdown />
         </div>
       </div>
 

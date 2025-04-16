@@ -1,5 +1,5 @@
-import { EllipsisOutlined } from '@ant-design/icons';
-import { Card, Button, Dropdown, Typography } from 'antd';
+import MoreMenuDropdown from '@components/more-menu-dropdown';
+import { Card, Typography } from 'antd';
 import React from 'react';
 import {
   PieChart,
@@ -104,18 +104,7 @@ const ProjectDistributionChart: React.FC<ProjectDistributionChartProps> = ({ dat
           <Title level={5} className="m-0">
             Project Distribution
           </Title>
-          <Dropdown
-            menu={{
-              items: [
-                { key: '1', label: <span className="text-sm">View Details</span> },
-                { key: '2', label: <span className="text-sm">Export Data</span> },
-                { key: '3', label: <span className="text-sm">Settings</span> },
-              ],
-            }}
-            placement="bottomRight"
-          >
-            <Button type="text" icon={<EllipsisOutlined />} />
-          </Dropdown>
+          <MoreMenuDropdown />
         </div>
       }
       styles={{

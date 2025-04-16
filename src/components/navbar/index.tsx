@@ -13,15 +13,19 @@ import { Link } from 'react-router-dom';
 
 interface NavbarProps {
   onToggleRightSidebar?: () => void;
+  onToggleLeftSidebar?: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onToggleRightSidebar }) => {
+const Navbar: React.FC<NavbarProps> = ({ onToggleRightSidebar, onToggleLeftSidebar }) => {
   return (
     <div className="flex justify-between items-center px-7 py-5 border-b border-gray-100">
       {/* Left side */}
       <div className="flex items-center">
         <div className="flex items-center mr-4">
-          <button className="flex items-center justify-center w-8 h-8 rounded hover:bg-gray-100">
+          <button
+            className="flex items-center justify-center w-8 h-8 rounded hover:bg-gray-100"
+            onClick={onToggleLeftSidebar}
+          >
             <MenuOutlined style={{ color: '#000' }} />
           </button>
           <button className="flex items-center justify-center w-8 h-8 rounded hover:bg-gray-100 ml-2">
